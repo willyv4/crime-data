@@ -1,0 +1,66 @@
+{% extends 'home.html' %} {% block content %}
+<div class="container mx-auto py-8">
+  <div class="max-w-lg mx-auto">
+    <h1 class="text-4xl font-bold mb-4">{{ zipcode }}</h1>
+    <div class="grid grid-cols-2 gap-4 mb-8">
+      <div>
+        <p class="font-bold text-lg mb-2">Overall Crime Grade</p>
+        <p class="text-3xl mb-4">{{ overall_grade }}</p>
+        <p class="font-bold text-lg mb-2">Violent Crime Grade</p>
+        <p class="text-3xl mb-4">{{ violent_grade }}</p>
+      </div>
+      <div>
+        <p class="font-bold text-lg mb-2">Property Crime Grade</p>
+        <p class="text-3xl mb-4">{{ property_grade }}</p>
+        <p class="font-bold text-lg mb-2">Other Crime Grade</p>
+        <p class="text-3xl mb-4">{{ other_grade }}</p>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 gap-4 mb-8">
+      <div>
+        <p class="font-bold text-lg mb-2">Fact</p>
+        <p class="text-xl mb-4">{{ fact }}</p>
+        <p class="font-bold text-lg mb-2">Risk</p>
+        <p class="text-xl mb-4">{{ risk }}</p>
+      </div>
+      <div>
+        <p class="font-bold text-lg mb-2">Risk Detail</p>
+        <p class="text-xl mb-4">{{ risk_detail }}</p>
+      </div>
+    </div>
+    <h2 class="text-2xl font-bold mb-4">Violent Crime Rates</h2>
+    <ul class="list-disc pl-4 mb-8">
+      <li class="mb-2">Assault Rate: {{ assault_rate }}</li>
+      <li class="mb-2">Robbery Rate: {{ robbery_rate }}</li>
+      <li class="mb-2">Rape Rate: {{ rape_rate }}</li>
+      <li class="mb-2">Murder Rate: {{ murder_rate }}</li>
+      <li class="mb-2">
+        Total Violent Crime: {{ total_violent_crime }} ({{
+        total_violent_crime_score }})
+      </li>
+    </ul>
+    <h2 class="text-2xl font-bold mb-4">Property Crime Rates</h2>
+    <ul class="list-disc pl-4 mb-8">
+      <li class="mb-2">Theft Rate: {{ theft_rate }}</li>
+      <li class="mb-2">Vehicle Theft Rate: {{ vehicle_theft_rate }}</li>
+      <li class="mb-2">Burglary Rate: {{ burglary_rate }}</li>
+      <li class="mb-2">Arson Rate: {{ arson_rate }}</li>
+      <li class="mb-2">
+        Total Property Crime: {{ total_property_crime }} ({{
+        total_property_crime_score }})
+      </li>
+    </ul>
+    <h2 class="text-3xl font-bold mb-4">Other Crime Rates:</h2>
+    <ul class="list-disc pl-6">
+      <li class="mb-2">Kidnapping Rate: {{ kidnapping_rate }}</li>
+      <li class="mb-2">Drug Crime Rate: {{ drug_crime_rate }}</li>
+      <li class="mb-2">Vandalism Rate: {{ vandalism_rate }}</li>
+      <li class="mb-2">Identity Theft Rate: {{ identity_theft_rate }}</li>
+      <li class="mb-2">Animal Cruelty Rate: {{ animal_cruelty_rate }}</li>
+      <li>
+        Total Other Rate: {{ total_other_rate }} ({{ total_other_score }})
+      </li>
+    </ul>
+  </div>
+</div>
+{% endblock %}
