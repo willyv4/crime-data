@@ -1,5 +1,6 @@
 from functools import total_ordering
 import requests
+from config import crime_data_api_key, zipcode_api_key
 
 
 def get_crime_data(zipcode):
@@ -9,7 +10,7 @@ def get_crime_data(zipcode):
     querystring = {"zip": zipcode}
 
     headers = {
-        "X-RapidAPI-Key": "93616c34d3msh7c183cdee9d19b2p130e56jsn21bc0299994c",
+        "X-RapidAPI-Key": crime_data_api_key,
         "X-RapidAPI-Host": "crime-data-by-zipcode-api.p.rapidapi.com"
     }
 
@@ -38,7 +39,7 @@ def format_data(zipcode):
 def get_city_data(city, state):
 
     headers = {
-        "apikey": "adea1200-cae2-11ed-a531-5de580e94116"
+        "apikey": zipcode_api_key
     }
 
     params = (
